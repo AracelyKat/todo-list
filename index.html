@@ -14,12 +14,20 @@
                 <h1 class="text-center">Lista de Tareas</h1>
             </div>
             <div class="card-body">
-                <input type="text" id="tarea" class="form-control" placeholder="Escribe una tarea...">
-                
-                <textarea name="descripcion" id="descripcion" class="form-control mt-2" placeholder="Descripcion..."></textarea>
-                <button id="agregar" class="btn btn-success mt-2">Agregar Tarea</button>
+                <input type="text" id="tituloTarea" class="form-control" placeholder="Escribe una tarea...">
+                <textarea id="descripcionTarea" class="form-control mt-2" placeholder="Descripción..."></textarea>
+                <button id="agregarTarea" class="btn btn-success mt-2">Agregar Tarea</button>
+            </div>
+        </div>
+        <div class="card mt-3">
+            <div class="card-body">
+                <table class="table">
+                    <tbody id="contenedorTareas">
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
 </body>
 </html>
+<script src="function.js"></script>
