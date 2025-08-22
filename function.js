@@ -9,7 +9,6 @@ window.addEventListener("DOMContentLoaded", () => {
         mostrarTareas();
     }
 });
-
 document.getElementById("agregarTarea").addEventListener("click", () => {
     let titulo = document.getElementById("tituloTarea").value.trim();
     let descripcion = document.getElementById("descripcionTarea").value.trim();
@@ -31,7 +30,6 @@ document.getElementById("agregarTarea").addEventListener("click", () => {
     document.getElementById("tituloTarea").value = "";
     document.getElementById("descripcionTarea").value = "";
 });
-
 function mostrarTareas() {
     let contenedorTareas = document.getElementById("contenedorTareas");
     contenedorTareas.innerHTML = "";
@@ -59,14 +57,12 @@ function mostrarTareas() {
         contenedorTareas.appendChild(fila);
     });
 }
-
 function eliminarTarea(id) {
     contadorTareas--;
     listaTareas = listaTareas.filter(tarea => tarea.id !== id);
     localStorage.setItem("tareas", JSON.stringify(listaTareas));
     mostrarTareas();
 }
-
 function verTarea(id) {
     let tarea = listaTareas.find(t => t.id === id);
     document.getElementById("verTitulo").textContent = tarea.titulo;
@@ -74,7 +70,6 @@ function verTarea(id) {
     document.getElementById("verEstado").textContent = tarea.estado;
     new bootstrap.Modal(document.getElementById("modalVer")).show();
 }
-
 function editarTarea(id) {
     let tarea = listaTareas.find(t => t.id === id);
     document.getElementById("editId").value = tarea.id;
@@ -82,7 +77,6 @@ function editarTarea(id) {
     document.getElementById("editDescripcion").value = tarea.descripcion;
     new bootstrap.Modal(document.getElementById("modalEditar")).show();
 }
-
 function guardarEdicion() {
     let id = parseInt(document.getElementById("editId").value);
     let titulo = document.getElementById("editTitulo").value.trim();
@@ -96,7 +90,6 @@ function guardarEdicion() {
     mostrarTareas();
     bootstrap.Modal.getInstance(document.getElementById("modalEditar")).hide();
 }
-
 function toggleEstado(id) {
     let tarea = listaTareas.find(t => t.id === id);
     tarea.estado = tarea.estado === "incompleto" ? "completada" : "incompleto";
